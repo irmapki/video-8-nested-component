@@ -3,31 +3,32 @@ import Button from "../Elements/Button";
 const CardProduct = (props) => {
     const { children } = props;
     return (
-        <div className="w-full max-w-sm bg-gray-700 border border-gray-800 rounded-lg shadow mx-2">
+        <div className="w-full max-w-sm bg-gray-700 border border-gray-800 rounded-lg shadow mx-2 flex flex-col justify-between">
             {children}
         </div>
     );
 };
+
 const Header = (props) => {
     const {image} = props
     return (
-        <a href="#">
-            <img 
+        <a href="#" className="flex justify-center items-center">
+            <img
                 src={image}
-                alt="product" 
-                className="p-11 rounded-t-lg" 
+                alt="product"
+                className="p-4 rounded-t-lg max-h-48 object-contain" 
             />
         </a>
     );
 };
 
 const Body = (props) => {
-    const { children, title }= props;
+    const { children, name }= props;
     return (
-        <div className="px-5 pb-5">
+        <div className="px-5 pb-5 h-full">
             <a href="#">
                 <h5 className="text-xl font-semibold tracking-tight text-white">
-                    {title}
+                    {name}
                 </h5>
                 <p className="text-sm text-gray-300">
                    {children}
@@ -36,7 +37,6 @@ const Body = (props) => {
         </div>
     );
 };
-
 
 const Footer = (props) => {
     const {price} =  props;
@@ -49,7 +49,6 @@ const Footer = (props) => {
         </div>
     );
 };
-
 
 CardProduct.Header = Header;
 CardProduct.Body = Body;

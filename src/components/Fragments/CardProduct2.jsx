@@ -23,10 +23,10 @@ const Header = (props) => {
 };
 
 const Body = (props) => {
-    const { children, title } = props;
+    const { children, name } = props;
     return (
-        <div className="flex-1 mt-3">
-            <h5 className="text-lg font-semibold text-white">{title}</h5>
+        <div className="flex-1 mt-3 h-full">
+            <h5 className="text-lg font-semibold text-white">{name}</h5>
             <p className="text-sm text-gray-300 mt-2">{children}</p>
         </div>
     );
